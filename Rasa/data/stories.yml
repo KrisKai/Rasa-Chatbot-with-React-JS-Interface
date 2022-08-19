@@ -1,30 +1,206 @@
-version: "3.0"
+version: "3.1"
 
 stories:
 
-- story: happy path
+- story: greet
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - action: utter_introduce_botself
+  - action: act_admision_hotline_web
 
-- story: sad path 1
+- story: goodbye
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: goodbye
   - action: utter_goodbye
+  - action: goodbye
+
+- story: can help
+  steps:
+  - intent: needhelp
+  - action: utter_greet
+  - action: utter_introduce_botself
+  - action: to_roi
+  - action: act_admision_hotline_web
+
+- story: ask admissions
+  steps:
+  - intent: ask_admissions
+  - action: to_roi
+  - action: act_admission_ways
+
+- story: ask admissions code
+  steps:
+  - intent: ask_admissions_code
+  - action: utter_admissions_code
+  - action: to_roi
+
+- story: ask admissions target
+  steps:
+  - intent: ask_admissions_target
+  - action: utter_admissions_target
+  - action: more_informajor_2021mark
+  - action: link_fanpage
+
+- story: ask college
+  steps:
+  - intent: ask_college
+  - action: utter_college
+  - action: more_informajor_2021mark
+
+- story: ask admissions way1
+  steps:
+  - intent: ask_admissions_way1
+  - action: way1
+  - action: more_infor_way1
+  
+
+- story: ask admissions way 2
+  steps:
+  - intent: ask_admissions_way2
+  - action: way2_front
+  - action: way2_back
+  
+
+- story: ask admissions code
+  steps:
+  - intent: ask_admissions_code
+  - action: utter_admissions_code
+  - action: to_roi
+
+- story: compare way1 way2
+  steps:
+  - intent: compare_way1_way2
+  - action: utter_compare_way1_way2
+  
+
+- story: ask have admissions by school profile
+  steps:
+  - intent: ask_have_admissions_by_school_profile
+  - action: utter_admissions_by_school_profile
+  - action: act_admission_ways
+
+- story: ask have hold an exam
+  steps:
+  - intent: ask_have_hold_an_exam
+  - action: utter_hold_an_exam
+  
+
+- story: ask admissions online
+  steps:
+  - intent: ask_admissions_online
+  - action: utter_admissions_online
+  - action: link_register_online
+
+- story: ask form regis
+  steps:
+  - intent: ask_form_regis
+  - action: link_form_regis
+  - action: link_fanpage
+
+- story: ask major
+  steps:
+  - intent: ask_major
+  - action: more_informajor_2021mark
+  - action: link_fanpage
+
+- story: ask main link
+  steps:
+  - intent: ask_main_link
+  - action: main_link
+
+- story: ask admissions link
+  steps:
+  - intent: ask_admissions_link
+  - action: admission_link        
+
+- story: ask fanpage link
+  steps:
+  - intent: ask_link_page_tuyen_sinh
+  - action: link_fanpage  
+  
+
+- story: ask student support
+  steps:
+  - intent: ask_student_support
+  - action: action_student_support
+
+- story: ask phone number
+  steps:
+  - intent: ask_phone_number
+  - action: act_contact_hotline
+
+- story: ask time
+  steps:
+  - intent: ask_time
+  - action: utter_remember_time
+  - action: link_fanpage
+
+- story: university address
+  steps:
+  - intent: university_address
+  - action: utter_address
+  - action: basic_infor_about_university
+
+- story: have domitory
+  steps:
+  - intent: ask_have_domitory
+  - action: action_have_domitory
+
+- story: ask study time
+  steps:
+  - intent: ask_study_time
+  - action: utter_study_time
+  - action: basic_infor_about_university
+
+- story: ask đh chinh quy
+  steps:
+  - intent: ask_dh_chinh_quy
+  - action: utter_dh_chinh_quy
+  - action: basic_infor_about_university
+
+- story: time to study
+  steps:
+  - intent: time_to_study
+  - action: utter_time_to_study
+  - action: basic_infor_about_university
+
+- story: building in university
+  steps:
+  - intent: ask_giang_duong
+  - action: utter_places
+
+- story: ask library
+  steps:
+  - intent: ask_library
+  - action: utter_library
+
+- story: ask volunteer
+  steps:
+  - intent: ask_volunteer
+  - action: utter_volunteer
+
+- story: ask clubs
+  steps:
+  - intent: ask_clubs
+  - action: utter_clubs
+
+- story: ask how to apply
+  steps:
+  - intent: ask_how_to_apply
+  - action: utter_how_to_apply
+
+- story: ask uniform
+  steps:
+  - intent: ask_uniform
+  - action: utter_uniform
+
+- story: ask info exam
+  steps:
+  - intent: info_exam
+  - action: info_exam
+
+- story: ask fee
+  steps:
+  - intent: ask_fee
+  - action: action_fee

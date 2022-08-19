@@ -1,34 +1,150 @@
-version: "3.0"
+version: "3.1"
 
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - needhelp
+  - ask_admissions
+  - ask_admissions_code
+  - ask_admissions_target
+  - ask_college
+  - ask_admissions_way1
+  - ask_admissions_way2
+  - compare_way1_way2
+  - ask_admissions_way3
+  - ask_admissions_way4
+  - ask_have_admissions_by_school_profile
+  - ask_have_hold_an_exam
+  - ask_admissions_online
+  - ask_form_regis
+  - ask_major
+  - ask_main_link
+  - ask_admissions_link
+  - ask_student_support
+  - ask_xet_hoc_ba
+  - tuyen_sinh_2021
+  - ask_time
+  - ask_phone_number
+  - university_address
+  - ask_have_domitory
+  - ask_study_time
+  - ask_dh_chinh_quy
+  - ask_fee
+  - time_to_study
+  - ask_giang_duong
+  - ask_library
+  - ask_volunteer
+  - ask_clubs
+  - ask_how_to_apply
+  - ask_uniform
+  - ask_link_page_tuyen_sinh
+  - info_exam
+  - out_of_scope
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Chào bạn"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Tạm biệt bạn, chúc bạn có những quyết định sáng suốt cho tương lai của mình."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_introduce_botself:
+  - text: "Mình là bot tự động hỗ trợ tư vấn tuyển sinh trường Đại học Bách khoa."
+
+  utter_admissions_code:
+  - text: "Mã tuyển sinh là DDK."
+
+  utter_admissions_target:
+  - text: "Chỉ tiêu tuyển sinh năm nay là 1800 chỉ tiêu."
+
+  utter_college:
+  - text: "Từ năm 2018 không có tuyển sinh cao đẳng nha bạn."
+
+  utter_admissions_way2:
+  - text: "Đăng ký xét tuyển bằng học bạ."
+
+  utter_compare_way1_way2:
+  - text: "Hai cách này khác nhau, bạn có thể tham khảo thêm trên fanpage của trường nha bạ."
+  
+  utter_admissions_by_school_profile:
+  - text: "Trường có tuyển bằng học bạ nha bạn."
+
+  utter_hold_an_exam:
+  - text: "Trường không có tổ chức kỳ thi riêng nha bạn."
+
+  utter_admissions_online:
+  - text: "ĐH BK có phiếu đăng ký online nha bạn."
+
+  utter_xet_hoc_ba:
+  - text: "ĐH BK có xét tuyển học bạ nha bạn"
+
+  utter_remember_time:
+  - text: "Dưới đây là các mốc thời gian quan trong mà các thí sinh cần chú ý"
+    image: "https://tuyensinh.ute.udn.vn/Upload/2020/Lich-Tuyen-Sinh-2020.jpg"
+
+  utter_address:
+  - text: "Trường Đh BK có địa chỉ là 48 Cao Thắng, Hải Châu, Đà Nẵng"
+
+  utter_study_time:
+  - text: "Trường thường có 2 buổi học chính, 5 tiết sáng và 5 tiết chiều\nBuổi sáng sẽ bắt đầu lúc 7h sáng và kết thúc lúc 11h30\nBuổi chiều sẽ bắt đầu lúc 1h và kết thúc lúc 18h\n"
+
+  utter_dh_chinh_quy:
+  - text: "Đại học Bách khoa là trường đào tạo hệ chính quy"
+
+  utter_time_to_study:
+  - text: "Theo kế hoạch học trong 4 năm, tuy nhiên, Nhà trường tổ chức đào tạo theo hình thức tín chỉ nên SV có thể rút ngắn thời gian học bằng cách đăng ký học vượt; hoặc tùy thuộc vào điều kiện hoàn cảnh bản thân mà có thể kéo dài thời gian học hơn 4 năm nhưng không quá 8 năm."
+
+  utter_places:
+  - text: "Trường có 1 khu giảng đường, 1 khu máy tính, 1 khu nghiên cứu và thư viện, 1 khu thể thao và 1 khu xưởng"
+
+  utter_library:
+  - text: "Trường có một thư viện luôn mở cửa trong thời gian hành chính để tất cả các bạn có thể đến học cũng như mượn sách\n"
+
+  utter_volunteer:
+  - text: "Trường có một đội tình nguyện rất hăng say và rất phong phú về cách hoạt động"
+
+  utter_clubs:
+  - text: "Trường có rất nhiều câu lạc bộ lớn nhỏ về nhiều lĩnh vực khác nhau như thể thao, âm nhạc, kỹ năng mềm,... rất thích hợp để kết bạn và rèn luyện kỹ năng cho mình"
+
+  utter_uniform:
+  - text: "Trường ko quy định về việc trang phục nhưng các bạn khi đến trường vẫn phải ăn mặc lịch sự và kín đáo, không được quá phản cảm"
+
+  utter_how_to_apply:
+  - text: "Bạn có thể nộp trực tiếp hoặc gửi bưu điện về địa chỉ 48 Cao Thắng, Thanh Bình, Hải Châu, Đà Nẵng."
+  
+  utter_out_of_scope:
+  - text: "Hiện tại mình vẫn chưa hiểu được ý của bạn để trả lời."
+
 
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false
+
+actions:
+  - action_student_support
+  - action_fee
+  - action_have_domitory
+  - action_name
+  - act_admision_hotline_web
+  - to_roi
+  - more_infor_way1
+  - way1
+  - more_infor_way2
+  - way2_front
+  - way2_back
+  - link_fanpage
+  - main_link
+  - admission_link
+  - more_informajor_2021mark
+  - link_register_online
+  - link_form_regis
+  - act_admission_ways
+  - act_contact_hotline
+  - basic_infor_about_university
+  - goodbye
+  - info_exam
+  - utter_out_of_scope
+  
+entities:
+  - location
+  - facility_type

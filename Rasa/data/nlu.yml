@@ -1,91 +1,683 @@
-version: "3.0"
+version: "3.1"
 
 nlu:
 - intent: greet
   examples: |
-    - hey
     - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
+    - hí ae
+    - chào ạ
     - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - xin chào
+    - xin chao
+    - chào thầy
+    - chào cô
+    - chào bot
+    - chào ad
+    - cho em hỏi này với
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
     - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - tạm biệt
+    - tam biet
+    - bái bai
+    - bai
+    - e cảm ơn
+    - cảm ơn
+    - thanks
+    - thank you
+    - hẹn gặp lại 
 
-- intent: affirm
+- intent: needhelp
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - em muốn hỏi chút
+    - em có tí thắc mắc
+    - cho em hỏi tí với
+    - e cần giúp
+    - cho e hỏi chút được ko
+    - e muốn hỏi chút
+    - cho e hỏi chút
+    - mình muốn hỏi chút
+    - mình cần giúp đỡ
+    - có thể giúp e tí ko ạ
+    - e muốn hỏi một vài vấn đề
+    - mình có chút thắc mắc
+    - e co chut thac mac
+    - cho e hoi chut
+    - em can giup
 
-- intent: deny
+- intent: ask_admissions
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - phuog thuc xet tuyen
+    - phương thức xét tuyển
+    - các cách xét tuyển
+    - các cách xt
+    - cách xét tuyển
+    - thông tin xét tuyển
+    - thông tin xt
+    - cho em xin thông tin về cách xét tuyển năm nay
+    - năm nay xét tuyển thế nào
+    - cách xét tuyển năm nay thế nào
+    - năm nay tuyển sinh sao ạ
+    - nam nay tuyen sinh sao a
+    - nam nay xet tuyen sao ạ
+    - xet tuyen nam nay
+    - tuyển sinh nam nay
+    - năm nay xét tuyển ra sao ạ
+    - hình thức xét tuyển 2021
+    - các cách xét tuyển 2021
+    - cho hỏi về cách xét tuyển năm nay
+    - những cách xét tuyển năm nay
+    - các cách tuyển sinh
+    - cách tuyển sinh
+    - thông tin tuyển sinh
+    - cho em xin thông tin về cách tuyển sinh năm nay
+    - năm nay tuyển sinh thế nào
+    - cách xt năm nay
+    - cách tuyển sinh năm nay thế nào
+    - năm nay tuyển sinh ra sao ạ
+    - hình thức tuyển sinh 2021
+    - các cách tuyển sinh 2021
+    - cho hỏi về cách tuyển sinh năm nay
+    - những cách tuyển sinh năm nay
+    - năm nay trường có những cách tuyển sinh nào
+    - năm nay trường có những cách xét tuyển nào
+    - cách tuyển sinh 2021
+    - cách xét tuyển 2021
+    - trường mình tuyển sinh như thế nào
+    - trường mình xét tuyển ntn
+    - thông tin tuyển sinh trường Đại học bách khoa
+    - cach tuyen sinh
+    - cach tuyen sinh nam nay
+    - cach xet tuyen
+    - cach xet tuy
+    - thong tin tuyen sinh
+    - thong tin xet tuyen
 
-- intent: mood_great
+- intent: ask_admissions_code
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - mã tuyển sinh
+    - ma xet tuyen
+    - ma xt
+    - Đại học bách khoa có mã tuyển sinh là gì vậy
+    - mã tuyển sinh của đh bách khoa
+    - trường mình có mã tuyển sinh là gì?
+    - mã tuyển sinh thi đại học của đh bk là gì?
+    - mã tuyển sinh trường mình là gì
+    - mã thi đại học trường đh bách khoa là gì
+    - mã đại học bách khoa là gì
+    - đh bách khoa mã tuyển sinh là gì
+    - mã xét tuyển
+    - đại học bách khoa có mã xét tuyển là gì vậy
+    - mã xét tuyển của đh bách khoa
+    - trường mình có mã xét tuyển là gì?
+    - mã xét tuyển thi đại học của đh bk là gì?
+    - mã xét tuyển trường mình là gì
+    - đh bk có mã xét tuyển là gì
 
-- intent: mood_unhappy
+- intent: ask_admissions_target
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - chỉ tiêu
+    - chi tieu tuyen sinh
+    - chi tieu
+    - so luong tuyen sinh nam nay
+    - năm nay tuyển sinh bao nhiêu sinh viên
+    - chỉ tiêu tuyển sinh năm nay là bao nhiêu
+    - năm nay xét tuyển bao nhiêu sinh viên
+    - chỉ tiêu xét tuyển năm nay là bao nhiêu
+    - năm nay nhận bao nhiêu sinh viên
+    - số lượng sinh viên tuyển sinh đại học bách khoa năm nay của trường là bao nhiêu
+    - số lượng sinh viên xét tuyển năm nay của trường là bao nhiêu
+    - chỉ tiêu sinh viên bao nhiêu
+    - năm nay đh bách khoa lấy bao nhiêu sinh viên
+    - chỉ tiêu tuyển sinh năm nay
+    - chỉ tiêu xét tuyển năm nay
+    - năm nay trường lấy bao nhiêu sinh viên
+    - đh bách khoa năm nay lấy bao nhiêu sv
+    - năm nay trường lấy nhiêu sv
+    - đh bk chỉ tiêu năm nay bao nhiêu
 
-- intent: bot_challenge
+- intent: ask_college
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - còn cao đẳng thì sao
+    - có cđ ko
+    - co tuyen cao dang ko
+    - cao dang nam nay bao nhieu diem
+    - cao dang the nao
+    - có tuyển cđ ko
+    - cao đẳng xét tuyển thế nào
+    - cao đẳng tuyển sinh thế nào
+    - cao đẳng có tuyển sinh ko
+    - cao đẳng có xét tuyển ko
+    - tuyển sinh cao đẳng như thế nào
+    - xét tuyển cao đẳng như thế nào vậy ạ
+    - năm nay có tuyển sinh cao đẳng không
+    - có tuyển sinh cao đẳng không ạ
+    - trường có tuyển sinh cao đăng ko
+    - có đào tạo cao đẳng ko vậy
+    - năm nay có xét tuyển cao đẳng không
+    - có xét tuyển cao đẳng không ạ
+    - trường có xét tuyển cao đăng ko
+    - trường có cao đẳng ko
+
+- intent: ask_admissions_way1
+  examples: |
+    - cách xét tuyển thứ nhất là thế nào
+    - tuyển sinh cách 1 là sao
+    - xét bằng điểm thi THPT quốc gia là như thế nào
+    - giải thích giúp e cách 1 với
+    - điểm thi thpt quốc gia là sao ạ
+    - điểm thi tốt nghiệp THPT
+    - cách tuyển sinh 1
+    - cách tuyển sinh thứ nhất
+    - cách xét tuyển 1
+    - cách xét tuyển thứ nhất
+    - Điểm thi THPT quốc gia năm 2021
+    - Điểm thi TN THPT
+    - phương thức 1
+    - phuong thuc 1
+    - cách xét tuyển thứ 1
+    - cách xét tuyển thứ nhất
+    - cách thứ nhất
+    - điểm thi tốt nghiệp
+    - diem thi tot nghiep
+    - cach tuyen sinh thu nhat
+    - cach tuyen sinh 1
+
+- intent: ask_admissions_way2
+  examples: |
+    - cách xét tuyển học bạ
+    - xét tuyển học bạ
+    - xét học bạ
+    - xét tuyển bằng điểm học bạ
+    - cách xét tuyển thứ hai là thế nào
+    - tuyển sinh cách 2 là sao
+    - cách tuyển sinh 2
+    - cách tuyển sinh thứ hai
+    - xét học bạ
+    - điểm xét học bạ
+    - cách xét tuyển 2
+    - cách thứ 2
+    - cách xét tuyển thứ hai
+    - Điểm xét THPT Quốc gia năm 2021
+    - điểm xét TN THPT
+    - phương thức 2
+    - phuong thuc 2
+    - cách thứ hai
+    - cach tuyen sinh thu hai
+    - cach tuyen sinh 2
+
+- intent: compare_way1_way2
+  examples: |
+    - cách 1 và cách 2 có khác gì nhau không ạ
+    - hai cách đầu có giống nhau ko
+    - sao hai cách đầu có vẻ giống nhau
+    - hai cách đầu có khác nhau ko
+    - sao em thấy cách 1 và cách 2 giống nhau
+    - điểm xét tốt nghiệp với điểm thi tốt nghiệp khác gì nhau
+    - hai cách đầu khác nhau hay giống nhau
+    - xét với thi khác gì nhau ạ
+    - điểm thi với xét tốt nghiệp có giống nhau không vậy ad
+    - so sánh cách 1 và cách 2
+    - so sanh cach 1 va 2
+    - phuong thuc 1 va 2 khac nhau diem nao
+    - phương thức 1 và phương thức 2 khác nhau ko
+    - so sánh hai phương thức 1 2
+    - so sánh phương thức thi và xét
+
+- intent: ask_admissions_way3
+  examples: |
+    - cách xét tuyển thứ 3 là như thế nào
+    - tuyển sinh cách 3 là sao
+    - xét bằng điểm thi đánh giá năng lực Đại học Quốc gia Tp.HCM 2021 là như thế nào
+    - giải thích cụ thể giúp em cách 3 với
+    - Điểm thi đánh giá năng lực Đh quốc gia TPHCM năm 2021 là sao ạ
+    - Điểm thi ĐGNL TPHCM
+    - cách tuyển sinh 3
+    - cách tuyển sinh thứ ba
+    - cách xét tuyển 3
+    - cách xét tuyển thứ ba
+    - điểm thi đánh giá năng lực năm 2021
+    - điểm thi ĐGNL Tp.HCM
+    - phương thức 3
+    - phuong thuc 3
+    - cách thứ ba
+    - điểm thi đánh giá năng lực
+    - cach tuyen sinh thu ba
+    - cach tuyen sinh 3
+    - diem thi danh gia nang luc
+
+- intent: ask_admissions_way4
+  examples: |
+    - cách xét tuyển thứ 4 là như thế nào
+    - tuyển sinh cách 4 là sao
+    - xét bằng cách xét tuyển thằng là như thế nào
+    - giải thích cụ thể giúp e cách 4 với
+    - xét tuyển thẳng là sao ạ
+    - thế nào thì được xét tuyển thẳng ạ
+    - nằm trong diện nào thì có thể xét tuyển thẳng
+    - làm sao để được xét tuyển thẳng
+    - khi nào thì e được xét tuyển thẳng
+    - ai mới được xét tuyển thẳng
+    - xét tuyển cách 4 là sao
+    - còn cách tuyển sinh thứ 4 là sao
+    - Xét tuyển thẳng
+    - phương thức 4
+    - phuong thuc 4
+    - cách thứ tư
+    - cách thứ bốn
+    - cách xét tuyển thứ 4
+    - cách tuyển sinh thứ 4
+    - cach tuyen sinh thu tu
+    - cach tuyen sinh 4
+    - xet tuyen thang
+
+- intent: ask_have_admissions_by_school_profile
+  examples: |  
+    - có đăng ký xét tuyển bằng học bạ ko ạ
+    - nhà trường có tuyển sinh bằng học bạ ko vậy
+    - nhà trường có xét tuyển bằng học bạ ko vậy
+    - còn học bạ thì có được xét tuyển ko
+    - còn học bạ thì có được dùng để tuyển sinh ko
+    - đại học bách khoa có tuyển sinh bằng học bạ ko
+    - đh bk có xét tuyển học bạ ko ạ
+    - có được xét tuyển bằng học bạ ko
+    - có được đăng ký tuyển sinh bằng học bạ ko
+    - xét tuyển học bạ
+    - tuyển sinh học bạ
+    - tuyen sinh hoc ba
+    - xet tuyen bang hoc ba
+    - Thầy cô cho em hỏi Trường ĐH bách khoa có xét tuyển bằng học bạ không?
+    - trường mình có xét tuyển bằng học bạ ko
+    - học bạ có dùng để xét tuyển được ko vậy
+    - có thể sử dụng học bạ để xét tuyển được không ạ
+    - cho em hỏi là có xét tuyển bằng học bạ cấp 3 không ạ
+    - co xet tuyen hoc ba ko
+    - co tuyen sinh hoc ba ko
+    - xet tuyen bang hoc ba dc khong
+    - xet tuyen hoc ba
+    - tuyen sinh hoc ba
+    - co xet tuyen bang hoc ba khong
+    - co tuyen sinh hoc ba ko  
+
+- intent: ask_have_hold_an_exam
+  examples: |  
+    - nhà trường có tổ chức kì thi riêng ko
+    - trường có thi riêng ko ạ
+    - còn về việc thi riêng của trường thì sao ạ
+    - có thi riêng tại trường ko ạ
+    - có kì thi riêng tại trường ko
+    - co thi rieng ko
+    - truong co to chuc thi rieng ko
+
+- intent: ask_admissions_online
+  examples: |  
+    - nhà trường có cho đăng ký xét tuyển online ko
+    - có xét tuyển online ko
+    - bao giờ thì xét tuyển online
+    - khi nào đk onl đc ạ
+    - khi nào có thể đăng ký online
+    - làm sao để đăng ký online
+    - có đk onl đc ko
+    - trường có cho đk onl ko
+    - có thể đk onl ko
+    - cổng đk onl
+    - cổng đăng ký online
+    - trang web đăng ký onl
+    - website đăng ký online
+    - đăng ký online đc ko
+    - dang ky online
+    - cach dk online
+
+- intent: ask_form_regis
+  examples: |  
+    - mẫu phiếu đăng ký năm nay
+    - mẫu đk năm nay
+    - cho e xin mẫu đk
+    - có form đăng ký ko
+    - cho xin form đk
+    - form đăng ký
+    - phiếu đk
+    - phiếu mẫu đk
+    - phieu dk mau
+    - phieu dk tuyen sinh
+    - phieu dang ky xet tuyen
+    - phiếu đăng ký xét tuyển
+
+- intent: ask_major
+  examples: |  
+    - điểm các ngành thì sao
+    - cho e xem điểm các ngành được ko
+    - có điểm các ngành chưa ạ
+    - chỉ tiêu các ngành năm nay thế nào
+    - điểm và chỉ tiêu từng ngành thế nào ạ
+    - trường có các ngành học nào
+    - trường đào tạo các ngành nào
+    - điểm các ngành năm ngoái
+    - điểm ngành năm ngoái
+    - điểm của ngành năm trước
+    - năm trước điểm ngành là bao nhiêu
+    - chỉ tiêu ngành năm ngoái là bao nhiêu
+    - số sv của ngành năm ngoái
+    - chỉ tiêu sv ngành năm ngoái
+    - có các ngành học nào
+    - diem cac nganh nam ngoai
+    - diem cac nganh hoc
+
+- intent: ask_main_link
+  examples: |  
+    - trang chủ của trường đh bách khoa là gì
+    - trang chủ của trường đh bk là gì
+    - trang chủ của trường đhbk là gì
+    - trang trường là gì
+    - cho e xin link trang của trường được ko ạ
+    - link trang chủ chính thức của nhà trường
+    - web trường là gì
+    - trang chủ của trường
+    - trang web của nhà trường là gì
+    - trang chu cua truong
+    - website cua truong
+    - trang web cua truong
+    - website chinh thuc cua truong
+
+- intent: ask_admissions_link
+  examples: |  
+    - trang thông tin tuyển sinh của trường đại học bách khoa là gì
+    - trang thông tin tuyển sinh
+    - em có thể xem thông tin tuyển sinh ở đâu
+    - xem thông tin tuyển sinh ở đâu
+    - trang xét tuyển của trường là gì
+    - link trang web xét tuyển của trường là gì
+    - trang thong tin tuyen sinh
+    - trang thong tin xet tuyen
+    - trang web tuyen sinh
+    - trang web xet tuyen
+    - website tuyen sinh
+    - website xet tuyen
+
+- intent: ask_link_page_tuyen_sinh
+  examples: |  
+    - link page tuyển sinh
+    - page tuyển sinh
+    - fanpage tuyển sinh
+    - cập nhật thông tin tuyển sinh ở đâu
+    - page tuyển sinh của trường
+    - thông tin tuyển sinh của trường xem ở đâu
+    - trang fb tuyển sinh của trường
+    - trang facebook tuyển sinh
+    - facebook tuyển sinh
+    - link page xét tuyển
+    - page xét tuyển
+    - fanpage xét tuyển
+    - cập nhật thông tin xét tuyển ở đâu
+    - page xét tuyển của trường
+    - thông tin xét tuyển của trường xem ở đâu
+    - trang fb xét tuyển của trường
+    - trang facebook xét tuyển
+    - Fanpage tuyển sinh trường Đại học bách khoa
+    - trang facebook tuyển sinh
+    - facebook truong
+    - trang facebook tuyen sinh
+    - trang xet tuyen facebook
+    - cap nhat thong tin xet tuyen o dau
+    - thong tin tuyen sinh nhanh nhat
+    - trang fanpage tuyen sinh
+    - page tuyen sinh
+    - page fb xet tuyen
+
+- intent: ask_student_support
+  examples: | 
+    - trường mình có những loại học bổng nào dành cho sv vậy ạ
+    - trường mình có học bổng cho sinh viên nào
+    - học bổng hỗ trợ sinh viên
+    - trường có học bổng không ạ
+    - học bổng
+    - hoc bong
+    - học bổng sao
+    - truong co chuong trinh hoc bong khong
+    - hoc bong hoc tap 
+    - trường có chính sách hỗ trợ gì cho sinh viên ko
+    - các chính sách hỗ trợ sv
+    - hỗ trợ sv như thế nào ạ
+    - có hỗ trợ gì thêm cho sinh viên không ạ
+    - sinh viên sẽ được hỗ trợ những gì thêm ko
+    - đh bách khoa có những chính sách ưu đãi gì cho sinh viên
+    - đh bk có những chính sách ưu đãi gì cho sinh viên
+    - ho tro sinh vien
+    - nhung ho tro cho sv
+    - chinh sach ho tro sinh vien
+    - nhung uu dai cho sinh vien
+    - uu dai ho tro sv
+
+- intent: ask_phone_number
+  examples: |  
+    - cho e xin số điện thoại để liên lạc trực tiếp được ko ạ
+    - sđt của nhà trường là gì
+    - e muốn gọi trực tiếp thì gọi qua số nào
+    - có thể liên hệ trực tiếp qua sđt nào vậy ạ
+    - gọi trực tiếp
+    - gọi điện thoại tư vấn trực tiếp
+    - so dien thoai tu van truc tiep
+    - so dien thoai lien lac truc tiep
+    - goi truc tiep
+    - goi hotline
+    - call hotline
+    - so dien thoai goi truc tiep
+    - goi ngay
+    - sdt cua truong
+    - goi truc tuyen
+    - số điện thoại của trường
+
+- intent: ask_time
+  examples: |  
+    - tg đăng ký thi là khi nào
+    - thời gian nộp hồ sơ là lúc nào
+    - thời gian đk xét tuyển
+    - trường tổ chức xét tuyển khi nào
+    - khi nào có kết quả xét tuyển
+    - khi nào có kết quả trúng tuyển
+    - khi nào thì biết mình đậu hay chưa
+    - bao giờ có điểm của các ngành
+    - tg nào sẽ có điểm sàn
+    - thoi gian tuyen sinh
+    - cac moc thoi gian dk xet tuyen
+    - ket qua thi co khi nao  
+
+- intent: university_address
+  examples: |  
+    - Trường mình địa chỉ ở đâu vậy admin
+    - địa chỉ trường
+    - địa chỉ
+    - trường ở đường nào
+    - truong minh dia chi o dau
+    - địa chỉ của trường là gì
+    - trường địa chỉ ở đâu
+    - đh bách khoa có địa chỉ là gì
+    - trường đh bk địa chỉ gì
+    - địa chỉ Đh bách khoa
+    - địa chỉ ĐHbk ở đâu
+    - địa chỉ trường
+    - trường ở đâu
+    - trường địa chỉ số mấy
+    - dia chi truong
+    - dia chi cua truong la bao nhieu
+    - dh bach khoa co dia chi bao nhieu
+
+- intent: ask_have_domitory
+  examples: |  
+    - có ktx ko
+    - ki tuc xa
+    - truong co ktx ko
+    - có ký túc xá ko
+    - trường có ktx ko
+    - đh bách khoa có ktx ko
+    - trường đại học bách khoa có ký túc xá ko
+    - trường có mấy khu ktx
+    - có ktx cho sv ko
+    - trường có ký túc cho sv ko
+    - ký túc xá
+    - ktx cho sv
+    - ký túc xá trường như thế nào
+    - truong co ktx ko
+    - co ktx ko
+
+- intent: ask_study_time
+  examples: |  
+    - thời gian các tiết học như thế nào
+    - các buổi học bắt đầu và kết thúc lúc mấy giờ
+    - thời gian biểu của một ngày học
+    - tg học trong một ngày thế nào
+    - các tiết học bắt đầu và kết thúc thế nào
+    - vào tiết và hết tiết mấy h
+    - tg hoc nhu the nao
+    - thoi gian hoc nhu the nao
+    - cac tiet hoc bao lau
+    - mot buoi hoc may tiet
+
+- intent: ask_dh_chinh_quy
+  examples: |  
+    - trường mình có phải đh chính quy ko
+    - co phai dai hoc chinh quy ko
+    - truong la dai hoc chinh quy dung ko
+    - dai hoc chinh quy
+    - đh bách khoa có phải đh chính quy ko
+    - có phải đh chính quy ko
+    - trường là hệ đh chính quy phải ko
+    - trường mình là chính quy đúng ko
+
+- intent: ask_fee
+  examples: |  
+    - học phí trường mình là bao nhiêu
+    - tiền học của trường là bao nhiêu
+    - đh bách khoa có học phí bao nhiêu
+    - trường mình tiền học cao không
+    - tiền học phí của trường đh bách khoa
+    - tiền học của trường
+    - hoc phi bao nhieu
+    - hoc phi
+    - học phí
+    - học phí của trường đại học bách khoa là bao nhiêu
+    - tiền học của đại học bk là bao nhiêu
+
+- intent: time_to_study
+  examples: |  
+    - thoi gian dao tao cua truong la bao lau
+    - thời gian đào tạo của trường là bao lâu
+    - thời gian đào tạo
+    - thoi gian dao tao
+    - thời gian đào tạo của đại học là bao lâu
+    - tg đào tạo bậc đh là bao lâu
+    - đào tạo đại học mấy năm
+    - đào tạo đại học 4 năm đúng ko
+    - thời gian học đại học là mấy năm
+    - tg dao tao la bao lau
+    - dao tao dh bao lau
+    - dao tao dai hoc bao lau
+    - thoi gian dao tao dai hoc
+    - tg dao tao dh  
+
+- intent: ask_giang_duong
+  examples: |  
+    - trường có tất cả bao nhiêu khu giảng đường
+    - có bao nhiêu khu trong trường
+    - trường có những khu vực nào
+    - trường có các giảng đường nào
+    - có những giảng đường nào
+    - truong co may khu
+    - truong rong bao nhieu
+    - truong co bao nhieu phong hoc
+    - co bao nhieu khu giang day trong truong
+    - trường có bao nhiêu khu giảng dạy
+
+- intent: ask_library
+  examples: |    
+    - trường có thư viện không
+    - thư viện của trường
+    - thư viện
+    - đh bk có thư viện không
+    - đh bách khoa có thư viện ko
+    - thư viện đh bách khoa
+    - trường đh bách khoa có thư viện ko
+    - thư viện như thế nào
+    - còn về thư viện thì như thế nào
+    - thu vien cua truong
+    - truong co thu vien ko
+    - thong tin về thư viện
+    - thong tin ve thu vien cua truong
+
+- intent: ask_volunteer
+  examples: |
+    - trường có đội tình nguyện ko
+    - đh bk có các đội tình nguyện ko
+    - trường mình có các hoạt động tình nguyện ko
+    - trường đh bk có tổ chức các hoạt động tình nguyện ko
+    - trường đại học bách khoa có tổ chức các hoạt động tình nguyện ko
+    - các đội tình nguyện
+    - những hội đoàn có trong trường
+    - cac doi tinh nguyen
+    - truong co doi tinh nguyen ko
+    - truong co cac nhom tinh nguyen ko
+    - cac hoat dong tinh nguyen
+
+- intent: ask_clubs
+  examples: |
+    - đại học bách khoa có những câu lạc bộ nào
+    - trường có những clb nào
+    - có những câu lạc bộ nào
+    - các clb có trong trường
+    - về những clb trong trường
+    - đh bk có các clb ko
+    - trường có nhiều câu lạc bộ ko
+    - cau lac bo
+    - clb cua truong
+    - truong co cac clb the thao ko
+    - co clb am nhac ko
+
+- intent: ask_how_to_apply
+  examples: |
+    - cách nộp hồ sơ qua bưu điện
+    - cách nộp hồ sơ trực tiếp
+    - nộp hồ sơ qua bưu điện thế nào
+    - nộp hồ sơ trực tiếp thế nào
+    - các cách để nộp hồ sơ
+    - e có thể nộp hồ sơ ở đâu
+    - làm sao để nộp hồ sơ đây
+    - nộp hồ sơ
+    - nop ho so
+    - cach nop ho so
+    - nop ho so qua dau
+    - nop ho so bang cach nao
+    - nop ho so nhu he nao
+    - cách nộp hồ sơ
+    - nộp hồ sơ thế nào
+    - nộp hồ sơ qua bưu điện được ko
+    - nộp hồ sơ trực tiếp ở đâu
+    - địa chỉ tiếp nhận hồ sơ
+    - nộp hồ sơ xét tuyển tới đâu
+
+- intent: ask_uniform
+  examples: |
+    - trường có đồng phục ko
+    - đh bách khoa có phải mặc đồng phục ko
+    - mặc quần áo thế nào khi đi học
+    - đh có quy định về đồng phục ko
+    - có yêu cầu gì về việc mặc đồng phục ko
+    - có bắt buộc phải mặc đồng phục ko
+    - truong co dong phuc ko
+    - co mac dong phuc ko
+    - co bat buoc mac dong phuc ko
+
+- intent: info_exam
+  examples: |
+    - thông tin về kỳ thi tốt nghiệp trung học phổ thông quốc gia
+    - thông tin thi đại học
+    - thông tin kỳ thi tốt nghiệp thpt quốc gia
+    - thời gian thi thpt quốc gia
+    - khi nào bắt đầu thi thpt
+    - lịch thi thpt quốc gia
+    - ngày thi thpt quốc gia
+    - lich thi thpt quoc gia
+    - ngay thi thpt quoc gia
+    - tg thi thpt quoc gia

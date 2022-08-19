@@ -1,11 +1,13 @@
 import './chatBot.css';
-import react, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {IoMdSend}  from 'react-icons/io';
 import {BiBot,BiUser} from 'react-icons/bi';
 
 function Basic(){
     const [chat,setChat] = useState([]);
     const [inputMessage,setInputMessage] = useState('');
+    const [recipientId,setRecipientId] = useState('');
+    const [recommendButton,setRecommendButton] = useState('');
     const [botTyping,setbotTyping] = useState(false);
 
     
@@ -18,12 +20,40 @@ function Basic(){
     
     },[chat])
 
-    
+    const handleButtonClick=(evt)=>{
+        evt.preventDefault();
+        const name = "Khai Do";
+        const request_temp = {sender : "user", sender_id : name , msg : recommendButton[2].title};
+        
+        if(recommendButton[2].payload !== ""){
+            
+            setChat(chat => [...chat, request_temp]);
+            setbotTyping(true);
+            
+            rasaAPI(recommendButton[2].payload);
+            setRecommendButton('');
+        }
+        else{
+            if(recommendButton[2].url !== ""){
+            
+                setbotTyping(true);
+                
+                const response_temp = {sender: "bot",recipient_id : "default",msg: recommendButton[2].url};
+                setChat(chat => [...chat, {sender: "bot",recipient_id : "default",msg: recommendButton[2].url}]);
+                console.log(response_temp)
+                setRecommendButton('');
+            }else{
+                window.alert("Please enter valid message");
+            }
+            
+        }
+        
+    }
 
 
     const handleSubmit=(evt)=>{
         evt.preventDefault();
-        const name = "shreyas";
+        const name = "Khai Do";
         const request_temp = {sender : "user", sender_id : name , msg : inputMessage};
         
         if(inputMessage !== ""){
@@ -31,7 +61,7 @@ function Basic(){
             setChat(chat => [...chat, request_temp]);
             setbotTyping(true);
             setInputMessage('');
-            rasaAPI(name,inputMessage);
+            rasaAPI(inputMessage);
         }
         else{
             window.alert("Please enter valid message");
@@ -40,7 +70,7 @@ function Basic(){
     }
 
 
-    const rasaAPI = async function handleClick(name,msg) {
+    const rasaAPI = async function handleClick(msg) {
     
         //chatData.push({sender : "user", sender_id : name, msg : msg});
         
@@ -53,27 +83,29 @@ function Basic(){
               'charset':'UTF-8',
             },
             credentials: "same-origin",
-            body: JSON.stringify({ "sender": name, "message": msg }),
+            body: JSON.stringify({ "message": msg }),
         })
         .then(response => response.json())
         .then((response) => {
             if(response){
-                const temp = response[0];
-                const recipient_id = temp["recipient_id"];
-                const recipient_msg = temp["text"];        
-
-
-                const response_temp = {sender: "bot",recipient_id : recipient_id,msg: recipient_msg};
-                setbotTyping(false);
+                response.forEach((temp) => {
+                    const recipient_id = temp["recipient_id"];
+                    const recipient_msg = temp["text"];        
+                    const recipient_custom = temp["custom"];        
+                    
+                    const response_temp = {sender: "bot",recipient_id : recipient_id,msg: recipient_msg};
+                    setRecipientId(recipient_id);
+                    setbotTyping(false);
+                    setRecommendButton(recipient_custom);
+                    setChat(chat => [...chat, response_temp]);
+                })
                 
-                setChat(chat => [...chat, response_temp]);
                // scrollBottom();
 
             }
         }) 
     }
 
-    console.log(chat);
 
     const stylecard = {
         maxWidth : '35rem',
@@ -117,10 +149,8 @@ function Basic(){
             
                 <div className="card" style={stylecard}>
                     <div className="cardHeader text-white" style={styleHeader}>
-                        <h1 style={{marginBottom:'0px'}}>AI Assistant</h1>
-                        {botTyping ? <h6>Bot Typing....</h6> : null}
-                        
-                        
+                        <h1 style={{marginTop:'0px'}}>Tư vấn tuyển sinh</h1>
+                        {botTyping ? <h6>Bot đang nhập....</h6> : null}
                         
                     </div>
                     <div className="cardBody" id="messageArea" style={styleBody}>
@@ -138,6 +168,7 @@ function Basic(){
                                         )
 
                                         :(
+                                            
                                             <div className= 'msgalignend'>
                                                 <h5 className="usermsg">{user.msg}</h5><BiUser className="userIcon" />
                                             </div>
@@ -153,6 +184,7 @@ function Basic(){
                         <div className="row">
                             <form style={{display: 'flex'}} onSubmit={handleSubmit}>
                                 <div className="col-10" style={{paddingRight:'0px'}}>
+                                    {recommendButton ? <button onClick={handleButtonClick}>{recommendButton[0].title}</button> : null}
                                     <input onChange={e => setInputMessage(e.target.value)} value={inputMessage} type="text" className="msginp"></input>
                                 </div>
                                 <div className="col-2 cola">
